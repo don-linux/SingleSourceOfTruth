@@ -1,5 +1,5 @@
 ---
-description: "Generate git commits using gitmoji, in English, max 50 characters"
+description: "Generate descriptive commits using gitmoji, in English, max 50 characters"
 alwaysApply: true
 ---
 
@@ -19,5 +19,14 @@ alwaysApply: true
 
 ## Bad examples
 
+- Adding new feature to X module
+- Fixing X file to Y module
+- Fixed
+- Fix
+- Commit message
 - Added new feature to improve performance (no gitmoji, not imperative)
-- Fixed bug causing crash on startup (not imperative)
+
+These are not good commit messages, because they are not descriptive enough, and don't follow the gitmoji nomenclature
+
+
+

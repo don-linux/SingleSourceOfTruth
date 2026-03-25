@@ -1,6 +1,6 @@
 ---
 name: docs-updater
-description: "Expert in updating documentation according to the changes in the project and the latest versions of the frameworks and libraries used."
+description: "Expert in updating documentation according to the changes in the project and the latest versions of the frameworks and libraries used"
 model: inherit
 use: docs-conventions
 ---
