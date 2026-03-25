@@ -3,6 +3,8 @@ description: "Coding style guidelines for the project."
 alwaysApply: true
 ---
 
+# Coding Style
+
 Write the code in English, always, to maintain the consistency in the codebase and avoid confusion
 
 Don't use emojis in the code, comments or markdown documentation
