@@ -47,22 +47,47 @@ If the request is ambiguous, ask whether they mean the Cursor product before pro
 6. Use the emitted overlay only for the current answer or current session. Never rewrite `references/llms-index.md` automatically.
 7. Read `references/source-policy.md` when claims are ambiguous, spread across multiple pages, or not directly confirmed.
 8. Ask one clarifying question if the request spans multiple unrelated Cursor topics.
-9. Respond with the answer format below.
+9. Respond using the direct-answer contract below.
 
 A `coverage gap` exists when the curated local index cannot classify the topic cleanly, cannot point to a sufficiently specific official page, or appears to contain a missing, malformed, or suspicious route for the question.
 
 If no live web or docs tool is available, or if the updater fails, answer conservatively from the local references and say that you could not verify against a live refreshed index.
 
-## Answer Format
+## Direct Answer Contract
 
 Use this structure unless the user asks for a different format:
 
-- `Answer`: direct answer first.
+- Start with the actual answer in natural prose.
+- The first sentence or first paragraph must contain the real answer.
+- Do not use `Answer` or `Respuesta` as the opening heading.
+- Add optional follow-up sections such as:
 - `Evidence`: 1-3 official Cursor pages that support the answer.
 - `Limits`: state uncertainty, missing confirmation, or version ambiguity if present.
 - `Next reading`: point to the best next official page.
+- Even with a lighter structure, never delay or omit the answer itself.
 
 Keep answers concise unless the user asks for depth.
+
+### Format Example
+
+Before:
+
+```markdown
+Answer
+Cursor rules are reusable instructions that guide the agent.
+
+Evidence
+- https://cursor.com/docs/rules.md
+```
+
+After:
+
+```markdown
+Cursor rules are reusable instructions that guide the agent.
+
+Evidence
+- https://cursor.com/docs/rules.md
+```
 
 ## Good Behavior
 

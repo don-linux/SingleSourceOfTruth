@@ -56,6 +56,8 @@ Recommended phrasing:
 
 ## Citation Discipline
 
+- Start with a direct answer in natural prose before any support sections.
+- Do not use `Answer` or `Respuesta` as an opening heading.
 - Cite 1-3 official pages when possible.
 - Prefer linking the page that directly supports the answer, not just the section hub.
 - Quote exact text only when wording matters.
