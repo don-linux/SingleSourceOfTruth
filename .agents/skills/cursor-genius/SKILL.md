@@ -1,0 +1,102 @@
+---
+name: cursor-genius
+description: Answers questions about the Cursor product using official Cursor documentation first. Covers Agent, modes, rules, skills, subagents, MCP, CLI, models, pricing, account, billing, enterprise, integrations, and troubleshooting. Use when the user asks how Cursor works, how to configure a Cursor feature, where Cursor documents something, or how two Cursor features differ. Avoid for generic code references to "cursor" that are unrelated to the Cursor product.
+---
+
+# Cursor Genius
+
+Use this skill to answer questions about the Cursor editor and platform with an official-docs-first workflow.
+
+## When to Use
+
+- Use this skill when the user is asking about the Cursor product itself.
+- Use it for feature behavior, setup, configuration, documentation lookup, pricing, account, enterprise, CLI, integrations, and troubleshooting questions.
+- Use it when the user asks for the official source, asks where something is documented, or wants a comparison between Cursor features.
+
+Do not use this skill when:
+
+- `cursor` refers to a code symbol, text caret, database cursor, or another product.
+- The user is asking you to build application code rather than explain Cursor itself.
+
+If the request is ambiguous, ask whether they mean the Cursor product before proceeding.
+
+## Default Stance
+
+- Prefer official Cursor documentation over memory.
+- Prefer canonical `docs/` pages over `help/` pages for product behavior and configuration.
+- Use `help/` pages for onboarding, UI guidance, FAQ-style questions, and troubleshooting.
+- Use `https://cursor.com/llms.txt` as a sitemap and discovery index, not as the final authority when a specific official page exists.
+- If live docs lookup is available, use it before answering from memory.
+- If official docs do not confirm a claim, say so clearly.
+
+## Language Rules
+
+- Keep this skill and its supporting references in English.
+- Detect the user's prompt language and answer in that same language.
+- If a localized Cursor doc is available and useful, prefer it.
+- If the best official source is only in English, use it and translate the explanation for the user.
+- Keep official product names, commands, paths, flags, and identifiers exactly as documented when helpful.
+
+## Workflow
+
+1. Confirm the question is about the Cursor product.
+2. Classify the topic with `references/llms-index.md`.
+3. Read `references/topic-routing.md` to find the most likely canonical pages.
+4. Fetch or query the current official Cursor pages referenced there.
+5. If the local map seems incomplete or stale, refresh from `https://cursor.com/llms.txt` before answering.
+6. Read `references/source-policy.md` when claims are ambiguous, spread across multiple pages, or not directly confirmed.
+7. Ask one clarifying question if the request spans multiple unrelated Cursor topics.
+8. Respond with the answer format below.
+
+If no live web or docs tool is available, answer conservatively from the local references and say that you could not verify against the latest live docs.
+
+## Answer Format
+
+Use this structure unless the user asks for a different format:
+
+- `Answer`: direct answer first.
+- `Evidence`: 1-3 official Cursor pages that support the answer.
+- `Limits`: state uncertainty, missing confirmation, or version ambiguity if present.
+- `Next reading`: point to the best next official page.
+
+Keep answers concise unless the user asks for depth.
+
+## Good Behavior
+
+- Normalize malformed links from `llms.txt`; cite the intended official page, not the malformed string.
+- When multiple official pages cover the same topic, prefer the more specific page and mention the secondary page only if it adds context.
+- Distinguish official Cursor docs from community content or general knowledge.
+- Summarize in your own words unless exact wording is important.
+- Do not over-trigger on code snippets or repo symbols named `cursor`.
+
+## Examples
+
+User: "What's the difference between Cursor rules and skills?"
+
+Agent behavior:
+
+- Route to `docs/rules.md` and `docs/skills.md`.
+- Add `help/customization/skills.md` if the user needs practical usage guidance.
+- Answer in the user's language with a short comparison and official links.
+
+User: "How do I set up MCP in Cursor?"
+
+Agent behavior:
+
+- Route to `docs/mcp.md`.
+- Add `docs/cli/mcp.md` only if the question is CLI-specific.
+- If the question includes auth or server config, cite the relevant subsection.
+
+User: "Can Cursor answer this in Spanish?"
+
+Agent behavior:
+
+- Explain that the final answer should match the user's language.
+- Prefer a localized Cursor page if available.
+- Otherwise use English docs as evidence and translate the explanation.
+
+## References
+
+- Read `references/llms-index.md` first for the documentation map.
+- Read `references/topic-routing.md` for canonical page selection.
+- Read `references/source-policy.md` for ambiguity, stale-index, and evidence rules.
