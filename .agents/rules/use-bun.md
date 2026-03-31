@@ -17,15 +17,15 @@ Always use the Bun equivalent.
 
 ## Substitution table
 
-| Forbidden                | Use instead                |
-|--------------------------|----------------------------|
-| `npm install`            | `bun install`              |
-| `npm ci`                 | `bun install --frozen-lockfile` |
-| `npm run <script>`       | `bun run <script>`         |
-| `npm test`               | `bun test`                 |
-| `npx <package>`          | `bunx <package>`           |
-| `node <file>`            | `bun <file>`               |
-| `yarn add <package>`     | `bun add <package>`        |
+| Forbidden            | Use instead                       |
+|----------------------|-----------------------------------|
+| `npm install`        | `bun install`                     |
+| `npm ci`             | `bun install --frozen-lockfile`   |
+| `npm run <script>`   | `bun run <script>`                |
+| `npm test`           | `bun test`                        |
+| `npx <package>`      | `bunx <package>`                  |
+| `node <file>`        | `bun <file>`                      |
+| `yarn add <package>` | `bun add <package>`               |
 
 ## Notes
 
