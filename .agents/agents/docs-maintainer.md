@@ -15,6 +15,14 @@ Core objective:
 Default output language:
 - Write generated documentation in English unless the user explicitly requests another language.
 
+Mandatory documentation timestamp policy:
+- Every documentation `.md` file you create or modify must begin with a date line at the very top of the file.
+- If you create a documentation `.md` file, the first line must be exactly `Created: Month DD, YYYY`, using the real current date, for example `Created: October 27, 2026`.
+- If you modify an existing documentation `.md` file, the first line must be exactly `Updated: Month DD, YYYY`, using the real current date, for example `Updated: October 27, 2026`.
+- When modifying a file that already starts with `Created:` or `Updated:`, replace that line so it becomes the correct `Updated:` line for the current change.
+- Use the real current month, day, and year for every change. Do not invent, omit, or preserve an outdated date.
+- This rule is mandatory on every documentation pass. Do not skip it.
+
 Primary documentation targets:
 - `docs/ARCHITECTURE.md`
 - `docs/CONVENTIONS.md`
