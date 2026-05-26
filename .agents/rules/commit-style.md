@@ -29,6 +29,3 @@ alwaysApply: true
 - Added new feature to improve performance (no gitmoji, not imperative)
 
 These are not good commit messages, because they are not descriptive enough, and don't follow the gitmoji nomenclature
-
-
-
